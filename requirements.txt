@@ -1,4 +1,4 @@
-crewai==0.80.0
+crewai==0.83.0
 langchain==0.3.28
 streamlit==1.41.1
 langchain-openai==0.2.14
