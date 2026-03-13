@@ -1,7 +1,6 @@
 """Planner Agent – decomposes the user task into actionable steps."""
 
-from crewai import Agent
-from langchain_openai import ChatOpenAI
+from crewai import Agent, LLM
 
 from src.config import OPENAI_API_KEY, OPENAI_MODEL, TEMPERATURE, MAX_ITERATIONS, VERBOSE_AGENTS
 from utils.logger import get_logger
@@ -13,10 +12,10 @@ def build_planner_agent() -> Agent:
     """Construct and return the Planner Agent."""
     logger.debug("Building Planner Agent")
 
-    llm = ChatOpenAI(
+    llm = LLM(
         model=OPENAI_MODEL,
         temperature=TEMPERATURE,
-        openai_api_key=OPENAI_API_KEY,
+        api_key=OPENAI_API_KEY,
     )
 
     return Agent(
