@@ -1,4 +1,4 @@
-crewai>=1.0,<2.0
-langchain-openai>=0.2,<0.5
-streamlit>=1.41,<2.0
-python-dotenv>=1.0,<2.0
+crewai==1.10.1
+langchain-openai==0.3.35
+streamlit==1.55.0
+python-dotenv==1.1.1
