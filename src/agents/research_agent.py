@@ -1,7 +1,6 @@
 """Research Agent – gathers background knowledge on a topic."""
 
-from crewai import Agent
-from langchain_openai import ChatOpenAI
+from crewai import Agent, LLM
 
 from src.config import OPENAI_API_KEY, OPENAI_MODEL, TEMPERATURE, MAX_ITERATIONS, VERBOSE_AGENTS
 from utils.logger import get_logger
@@ -13,10 +12,10 @@ def build_research_agent() -> Agent:
     """Construct and return the Research Agent."""
     logger.debug("Building Research Agent")
 
-    llm = ChatOpenAI(
+    llm = LLM(
         model=OPENAI_MODEL,
         temperature=TEMPERATURE,
-        openai_api_key=OPENAI_API_KEY,
+        api_key=OPENAI_API_KEY,
     )
 
     return Agent(

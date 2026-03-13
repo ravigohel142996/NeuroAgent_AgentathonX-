@@ -1,7 +1,6 @@
 """Report Agent – compiles all outputs into a final structured report."""
 
-from crewai import Agent
-from langchain_openai import ChatOpenAI
+from crewai import Agent, LLM
 
 from src.config import OPENAI_API_KEY, OPENAI_MODEL, TEMPERATURE, MAX_ITERATIONS, VERBOSE_AGENTS
 from utils.logger import get_logger
@@ -13,10 +12,10 @@ def build_report_agent() -> Agent:
     """Construct and return the Report Agent."""
     logger.debug("Building Report Agent")
 
-    llm = ChatOpenAI(
+    llm = LLM(
         model=OPENAI_MODEL,
         temperature=TEMPERATURE,
-        openai_api_key=OPENAI_API_KEY,
+        api_key=OPENAI_API_KEY,
     )
 
     return Agent(
