@@ -75,6 +75,16 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
+## Streamlit Cloud deployment note
+
+If deploying to Streamlit Community Cloud, keep `runtime.txt` in the repo root with the exact format below so Python 3.11 is used (CrewAI requires Python >=3.10):
+
+```
+python-3.11
+```
+
+---
+
 ## Features
 
 | Feature | Details |
